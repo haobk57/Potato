@@ -1,0 +1,19 @@
+version: '2'
+services:
+    putatu-app:
+        image: putatu
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:sqlserver://putatu-mssql:1433;database=jhitest
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=putatu-elasticsearch:9300
+        ports:
+            - 8080:8080
+    putatu-mssql:
+        extends:
+            file: mssql.yml
+            service: putatu-mssql
+    putatu-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: putatu-elasticsearch

@@ -1,0 +1,76 @@
+entity Staff {
+    salary Float required
+}
+
+entity Position {
+    name String required
+}
+
+entity Customer{
+    coin Float required
+}
+
+entity CustomerType{
+    name String required
+}
+
+entity PaymentCoin{
+    method String required,
+    name String required,
+    coin Float required,
+    money Integer,
+    createAt ZonedDateTime
+}
+
+entity Exchange{
+    coin Float required,
+    createAt ZonedDateTime
+}
+
+entity Product {
+    name String required,
+    percent Float required,
+    image ImageBlob,
+    content String,
+    price Float,
+    link String,
+    numberOfViews Integer,
+    createAt ZonedDateTime
+}
+
+entity Provider{
+    name String required,
+    linkHome String required,
+    image ImageBlob,
+    percent Float,
+    createAt ZonedDateTime
+}
+
+entity Category{
+    name String required
+}
+
+relationship OneToOne {
+    Staff{user} to User,
+    Customer{user} to User
+}
+
+relationship ManyToOne {
+    Staff{position} to Position,
+    Customer{type} to CustomerType,
+
+    PaymentCoin{staff} to Staff,
+    PaymentCoin{customer} to Customer,
+
+    Exchange{Exchange} to Customer,
+    Exchange{Product} to Product,
+
+    Product{category} to Category,
+    Product{provider} to Provider
+}
+
+
+
+paginate * with pagination
+service * with serviceImpl
+dto * with mapstruct

@@ -1,0 +1,37 @@
+
+<div *ngIf="staff">
+    <h2><span jhiTranslate="putatuApp.staff.detail.title">Staff</span> {{staff.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="putatuApp.staff.salary">Salary</span></dt>
+        <dd>
+            <span>{{staff.salary}}</span>
+        </dd>
+        <dt><span jhiTranslate="putatuApp.staff.user">User</span></dt>
+        <dd>
+            <div *ngIf="staff.user">
+                <a [routerLink]="['../user-management', staff.user.login ]" >{{staff.user.login}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="putatuApp.staff.position">Position</span></dt>
+        <dd>
+            <div *ngIf="staff.position">
+                <a [routerLink]="['/position', staff.position.id]">{{staff.position.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'staff/'+ staff.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

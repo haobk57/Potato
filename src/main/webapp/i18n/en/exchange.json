@@ -1,0 +1,25 @@
+{
+    "putatuApp": {
+        "exchange" : {
+            "home": {
+                "title": "Exchanges",
+                "createLabel": "Create a new Exchange",
+                "createOrEditLabel": "Create or edit a Exchange",
+                "search": "Search for Exchange"
+            },
+            "created": "A new Exchange is created with identifier {{ param }}",
+            "updated": "A Exchange is updated with identifier {{ param }}",
+            "deleted": "A Exchange is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Exchange {{ id }}?"
+            },
+            "detail": {
+                "title": "Exchange"
+            },
+            "coin": "Coin",
+            "createAt": "Create At",
+            "exchange": "Exchange",
+            "product": "Product"
+        }
+    }
+}

@@ -1,0 +1,91 @@
+<div>
+    <h2>
+        <span jhiTranslate="putatuApp.exchange.home.title">Exchanges</span>
+        <button class="btn btn-primary float-right jh-create-entity create-exchange" [routerLink]="['/', { outlets: { popup: ['exchange-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="putatuApp.exchange.home.createLabel">
+            Create new Exchange
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'putatuApp.exchange.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="exchanges">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="coin"><span jhiTranslate="putatuApp.exchange.coin">Coin</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="createAt"><span jhiTranslate="putatuApp.exchange.createAt">Create At</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="exchangeId"><span jhiTranslate="putatuApp.exchange.exchange">Exchange</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="productId"><span jhiTranslate="putatuApp.exchange.product">Product</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let exchange of exchanges ;trackBy: trackId">
+                <td><a [routerLink]="['../exchange', exchange.id ]">{{exchange.id}}</a></td>
+                <td>{{exchange.coin}}</td>
+                <td>{{exchange.createAt | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="exchange.exchange">
+                        <a [routerLink]="['../customer', exchange.exchange.id  ]" >{{exchange.exchange.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="exchange.product">
+                        <a [routerLink]="['../product', exchange.product.id  ]" >{{exchange.product.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../exchange', exchange.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'exchange/'+ exchange.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'exchange/'+ exchange.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="exchanges && exchanges.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [maxSize]="5" [pageSize]="itemsPerPage" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,39 @@
+<div  *ngIf="product">
+
+    <dd>
+        <span>{{product.name}}</span>
+    </dd>
+    <dt><span jhiTranslate="putatuApp.product.percent">Percent</span></dt>
+    <dd>
+        <span>{{product.percent}}</span>
+    </dd>
+    <dt><span jhiTranslate="putatuApp.product.image">Image</span></dt>
+    <dd>
+        <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-width: 100%;" alt="product image"/>     
+    </dd>
+    <dt><span jhiTranslate="putatuApp.product.content">Content</span></dt>
+    <dd>
+        <span>{{product.content}}</span>
+    </dd>
+    <dt><span jhiTranslate="putatuApp.product.price">Price</span></dt>
+    <dd>
+        <span>{{product.price}}</span>
+    </dd>
+    <dt><span jhiTranslate="putatuApp.product.link">Link</span></dt>
+    <dd>
+        <span>{{product.link}}</span>
+    </dd>
+    <dt><span jhiTranslate="putatuApp.product.numberOfViews">Number Of Views</span></dt>
+    <dd>
+        <span>{{product.numberOfViews}}</span>
+    </dd>
+    <dt><span jhiTranslate="putatuApp.product.createAt">Create At</span></dt>
+    <dd>
+        <span>{{product.createAt | date:'medium'}}</span>
+    </dd>
+
+    <button type="" class="btn btn-primary" (click)="buy()">Mua Hàng</button>
+</div>
+<div  *ngIf="!product">
+    Load product
+</div>

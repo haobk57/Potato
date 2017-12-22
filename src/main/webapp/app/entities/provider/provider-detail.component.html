@@ -1,0 +1,46 @@
+
+<div *ngIf="provider">
+    <h2><span jhiTranslate="putatuApp.provider.detail.title">Provider</span> {{provider.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="putatuApp.provider.name">Name</span></dt>
+        <dd>
+            <span>{{provider.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="putatuApp.provider.linkHome">Link Home</span></dt>
+        <dd>
+            <span>{{provider.linkHome}}</span>
+        </dd>
+        <dt><span jhiTranslate="putatuApp.provider.createAt">Create At</span></dt>
+        <dd>
+            <span>{{provider.createAt | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="putatuApp.provider.image">Image</span></dt>
+        <dd>
+            <div *ngIf="provider.image">
+                <a (click)="openFile(provider.imageContentType, provider.image)">
+                    <img [src]="'data:' + provider.imageContentType + ';base64,' + provider.image" style="max-width: 100%;" alt="provider image"/>
+                </a>
+                {{provider.imageContentType}}, {{byteSize(provider.image)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="putatuApp.provider.percent">Percent</span></dt>
+        <dd>
+            <span>{{provider.percent}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'provider/'+ provider.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

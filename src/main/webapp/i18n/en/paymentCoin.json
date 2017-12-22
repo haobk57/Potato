@@ -1,0 +1,28 @@
+{
+    "putatuApp": {
+        "paymentCoin" : {
+            "home": {
+                "title": "Payment Coins",
+                "createLabel": "Create a new Payment Coin",
+                "createOrEditLabel": "Create or edit a Payment Coin",
+                "search": "Search for Payment Coin"
+            },
+            "created": "A new Payment Coin is created with identifier {{ param }}",
+            "updated": "A Payment Coin is updated with identifier {{ param }}",
+            "deleted": "A Payment Coin is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Payment Coin {{ id }}?"
+            },
+            "detail": {
+                "title": "Payment Coin"
+            },
+            "method": "Method",
+            "name": "Name",
+            "coin": "Coin",
+            "money": "Money",
+            "createAt": "Create At",
+            "staff": "Staff",
+            "customer": "Customer"
+        }
+    }
+}

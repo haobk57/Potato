@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <jhi-menu></jhi-menu>
+    <div>
+        <div class="row mg-t-30 top-deal" *ngIf="products">
+            <div class="col-md-3 product mg-t-30" *ngFor="let product of products" (click)="redirect(product.id)">
+                <div class="content">
+                    <img class="mg-t-30" [src]="'data:' + product.imageContentType + ';base64,' + product.image" alt="product"/>
+                    <h3>{{product.name}}</h3>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+                            <span>{{product.price}}</span>
+                        </div>
+                    </div>
+                    <button type="button">Hoàn tiền {{product.percent}}%</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

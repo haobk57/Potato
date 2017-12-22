@@ -1,0 +1,98 @@
+<div class="wrapper">
+    <jhi-menu></jhi-menu>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="images/sliders/15e8dd9c5d72c09244d1881b09d98c6f.png" width="100%" alt="">
+        </div>
+        <div class="col-md-4">
+            <img src="images/home/6b7690b4c8137f42296ac77be4e6d1d7.png" width="100%" alt="">
+        </div>
+    </div>
+
+    <div class="row mg-t-30">
+        <div class="col-md-3 provider" *ngFor="let provider of providers" (click)="redirect(provider.linkHome)">
+            <img [src]="'data:' + provider.imageContentType + ';base64,' + provider.image" alt="provider image"/>
+        </div>
+    </div>
+    <div class="row mg-t-30 hot-trends">
+        <div class="col-md-2">
+            <div class="title">
+                <h3>
+                    HOT
+                    <br>
+                    Trends
+                </h3>
+                <h4>
+                    Sản phẩm đang
+                    <br>HOT trên thị trường
+                </h4>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-3 product" *ngFor="let product of newProducts" (click)="redirect(product.id)">
+                    <div class="content">
+                        <img class="mg-t-30" [src]="'data:' + product.imageContentType + ';base64,' + product.image" alt="product"/>
+                        <h3>{{product.name}}</h3>
+                        <div>
+                            <div>
+
+                            </div>
+                            <div>
+                                <span>{{product.price}}</span>
+                            </div>
+                        </div>
+                        <button type="button">Hoàn tiền {{product.percent}}%</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="title mg-t-30">TOP DEAL</h2>
+    <div class="row mg-t-30 top-deal">
+        <div class="col-md-3 product mg-t-30" *ngFor="let product of products" (click)="redirect(product.id)">
+            <div class="content">
+                <img class="mg-t-30" [src]="'data:' + product.imageContentType + ';base64,' + product.image" alt="product"/>
+                <h3>{{product.name}}</h3>
+                <div>
+                    <div>
+
+                    </div>
+                    <div>
+                        <span>{{product.price}}</span>
+                    </div>
+                </div>
+                <button type="button">Hoàn tiền {{product.percent}}%</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="title mg-t-30" jhiTranslate="home.truyenthong">Truyền thông nói gì về Potato?</h2>
+    <div class="row mg-t-30">
+        <div class="col-md-8 truyenthong">
+            <div>
+                <img src="images/logo/vnexpress.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/logo/vtv.png" alt="">
+            </div>
+            <div>
+                <img src="images/logo/thanhnien.png" alt="">
+            </div>
+            <div>
+                <img src="images/logo/infonet.png" alt="">
+            </div>
+            <div>
+                <img src="images/logo/genk.png" alt="">
+            </div>
+            <div>
+                <img src="images/logo/cafebiz.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+

@@ -1,0 +1,26 @@
+{
+    "putatuApp": {
+        "provider" : {
+            "home": {
+                "title": "Providers",
+                "createLabel": "Thêm mới một Provider",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Provider",
+                "search": "Tìm Provider"
+            },
+            "created": "Một Provider mới được tạo với định danh {{ param }}",
+            "updated": "Một Provider cập nhật với định danh {{ param }}",
+            "deleted": "Một Provider đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Provider {{ id }}?"
+            },
+            "detail": {
+                "title": "Provider"
+            },
+            "name": "Name",
+            "linkHome": "Link Home",
+            "createAt": "Create At",
+            "image": "Image",
+            "percent": "Percent"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "putatuApp": {
+        "exchange" : {
+            "home": {
+                "title": "Exchanges",
+                "createLabel": "Thêm mới một Exchange",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Exchange",
+                "search": "Tìm Exchange"
+            },
+            "created": "Một Exchange mới được tạo với định danh {{ param }}",
+            "updated": "Một Exchange cập nhật với định danh {{ param }}",
+            "deleted": "Một Exchange đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Exchange {{ id }}?"
+            },
+            "detail": {
+                "title": "Exchange"
+            },
+            "coin": "Coin",
+            "createAt": "Create At",
+            "exchange": "Exchange",
+            "product": "Product"
+        }
+    }
+}

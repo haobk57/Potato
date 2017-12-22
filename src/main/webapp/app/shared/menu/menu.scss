@@ -1,0 +1,44 @@
+.nav{
+    justify-content: space-between;
+    padding-bottom: 2em;
+
+    div.dd-category{
+        position: relative;
+        &:hover div{
+            display: block;
+        }
+        &:hover span{
+            background-color: rgba(0,0,0,.1);
+        }
+        span{
+            padding:10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        div{
+            margin-top: 3px;
+            display: none;
+            position: absolute;
+            z-index: 1;
+            width:250px;
+            background: #fff;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+
+            li{
+                a{
+                    display: block;
+                    padding: 8px 20px;
+                    color: #000;
+                    &:hover{
+                        
+                        text-decoration: none;
+                    }
+                }
+                &:hover{
+                    background-color: rgba(0,0,0,0.1);
+                }
+            }
+        }
+    }
+}

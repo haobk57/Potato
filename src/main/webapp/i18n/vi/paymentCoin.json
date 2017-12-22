@@ -1,0 +1,28 @@
+{
+    "putatuApp": {
+        "paymentCoin" : {
+            "home": {
+                "title": "Payment Coins",
+                "createLabel": "Thêm mới một Payment Coin",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Payment Coin",
+                "search": "Tìm Payment Coin"
+            },
+            "created": "Một Payment Coin mới được tạo với định danh {{ param }}",
+            "updated": "Một Payment Coin cập nhật với định danh {{ param }}",
+            "deleted": "Một Payment Coin đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Payment Coin {{ id }}?"
+            },
+            "detail": {
+                "title": "Payment Coin"
+            },
+            "method": "Method",
+            "name": "Name",
+            "coin": "Coin",
+            "money": "Money",
+            "createAt": "Create At",
+            "staff": "Staff",
+            "customer": "Customer"
+        }
+    }
+}
