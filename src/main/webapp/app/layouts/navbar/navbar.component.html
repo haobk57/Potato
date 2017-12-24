@@ -8,6 +8,14 @@
             <span jhiTranslate="global.title" class="navbar-title">Putatu</span> <span class="navbar-version">{{version}}</span>
         </a>
     </div>
+    <div class="">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="searchString" name="txtSearch">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" [routerLink]="['/search/', searchString]">Search</button>
+            </span>
+        </div>
+    </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
