@@ -10,7 +10,7 @@
     </div>
 
     <div class="row mg-t-30">
-        <div class="col-md-3 provider" *ngFor="let provider of providers" (click)="redirect(provider.linkHome)">
+        <div class="col-md-3 provider" *ngFor="let provider of providers" (click)="redirectProvider(provider.name)">
             <img [src]="'data:' + provider.imageContentType + ';base64,' + provider.image" alt="provider image"/>
         </div>
     </div>

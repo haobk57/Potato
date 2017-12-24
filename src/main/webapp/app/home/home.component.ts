@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.user = {};
         this.loadNewProduct();
         this.loadProvider();
         this.loadProduct();
@@ -87,8 +88,12 @@ export class HomeComponent implements OnInit {
     }
     private onLoadProviderError(error) {
     }
+    redirectProvider(name) {
+        window.open('http://localhost:8080/#/fake/' + name);
+    }
     redirect(id) {
         this.id = id;
+        console.log('oki1');
         this.principal.identity().then((account) => {
             this.account = account;
             this.loadUser();
@@ -102,13 +107,19 @@ export class HomeComponent implements OnInit {
         });
     }
     loadCustomer() {
+        console.log('oki3');
         this.customerService.search({
             page: 0,
             query: 'user.id=' + this.user.id,
             size: 1,
             sort: ''}).subscribe(
-                (res: ResponseWrapper) => { this.customer = res.json[0];
-                window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID=' + this.customer.id);
+                (res: ResponseWrapper) => {
+                    this.customer = res.json[0];
+                    if (this.customer !== undefined) {
+                        window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID=' + this.customer.id);
+                    } else {
+                        alert('Vui lòng đăng ký thành viên để được cộng coin khi mua hàng');
+                    }
             }, null
             );
         return;

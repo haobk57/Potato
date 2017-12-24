@@ -90,8 +90,12 @@ export class CateComponent implements OnInit {
             query: 'user.id=' + this.user.id,
             size: 1,
             sort: ''}).subscribe(
-                (res: ResponseWrapper) => { this.customer = res.json[0];
-                window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID=' + this.customer.id);
+                (res: ResponseWrapper) => {
+                if (this.customer !== undefined) {
+                    window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID=' + this.customer.id);
+                } else {
+                    alert('Vui lòng đăng ký thành viên để được cộng coin khi mua hàng');
+                }
             }, null
             );
         return;
