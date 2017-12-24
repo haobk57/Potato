@@ -5,12 +5,12 @@
              <li *ngFor="let category of categories"><a [routerLink]="['/cate/', category.id]">{{category.name}}</a></li> 
         </div>
     </div>
-    <div class="">
+    <!-- <div class="">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="searchString" name="txtSearch">
             <span class="input-group-btn">
                 <button class="btn btn-primary" type="button" [routerLink]="['/search/', searchString]">Search!</button>
             </span>
         </div>
-    </div>
+    </div> -->
 </div>
