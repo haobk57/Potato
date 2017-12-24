@@ -48,7 +48,7 @@ export class CustomerAddCoinComponent implements OnInit {
             this.loadUser();
         });
     }
-    loadUser(){
+    loadUser() {
         const login = this.account.login;
         this.userService.find(login).subscribe((user) => {
             this.user = user;

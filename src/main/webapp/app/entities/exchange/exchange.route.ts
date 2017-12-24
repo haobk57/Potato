@@ -33,7 +33,7 @@ export const exchangeRoute: Routes = [
             'pagingParams': ExchangeResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.exchange.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -41,7 +41,7 @@ export const exchangeRoute: Routes = [
         path: 'exchange/:id',
         component: ExchangeDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.exchange.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -53,7 +53,7 @@ export const exchangePopupRoute: Routes = [
         path: 'exchange-new',
         component: ExchangePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.exchange.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const exchangePopupRoute: Routes = [
         path: 'exchange/:id/edit',
         component: ExchangePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.exchange.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const exchangePopupRoute: Routes = [
         path: 'exchange/:id/delete',
         component: ExchangeDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.exchange.home.title'
         },
         canActivate: [UserRouteAccessService],

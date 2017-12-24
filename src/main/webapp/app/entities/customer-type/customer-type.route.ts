@@ -33,7 +33,7 @@ export const customerTypeRoute: Routes = [
             'pagingParams': CustomerTypeResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customerType.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -41,7 +41,7 @@ export const customerTypeRoute: Routes = [
         path: 'customer-type/:id',
         component: CustomerTypeDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customerType.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -53,7 +53,7 @@ export const customerTypePopupRoute: Routes = [
         path: 'customer-type-new',
         component: CustomerTypePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customerType.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const customerTypePopupRoute: Routes = [
         path: 'customer-type/:id/edit',
         component: CustomerTypePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customerType.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const customerTypePopupRoute: Routes = [
         path: 'customer-type/:id/delete',
         component: CustomerTypeDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customerType.home.title'
         },
         canActivate: [UserRouteAccessService],

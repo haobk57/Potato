@@ -33,7 +33,7 @@ export const paymentCoinRoute: Routes = [
             'pagingParams': PaymentCoinResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.paymentCoin.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -41,7 +41,7 @@ export const paymentCoinRoute: Routes = [
         path: 'payment-coin/:id',
         component: PaymentCoinDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.paymentCoin.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -53,7 +53,7 @@ export const paymentCoinPopupRoute: Routes = [
         path: 'payment-coin-new',
         component: PaymentCoinPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.paymentCoin.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const paymentCoinPopupRoute: Routes = [
         path: 'payment-coin/:id/edit',
         component: PaymentCoinPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.paymentCoin.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const paymentCoinPopupRoute: Routes = [
         path: 'payment-coin/:id/delete',
         component: PaymentCoinDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.paymentCoin.home.title'
         },
         canActivate: [UserRouteAccessService],

@@ -122,8 +122,7 @@ public class UserResource {
             mailService.sendCreationEmail(newUser);
 
             Authority authority = new Authority();
-            authority.setName("ROLE_USER");
-            if(newUser.getAuthorities().contains(authority)){
+            if(userDTO.getAuthorities().contains("ROLE_USER")){
                 CustomerDTO customerDTO = new CustomerDTO();
                 customerDTO.setUserId(newUser.getId());
                 customerDTO.setCoin(0f);
@@ -131,8 +130,7 @@ public class UserResource {
                 customerDTO = customerService.save(customerDTO);
             }
 
-            authority.setName("ROLE_STAFF");
-            if(newUser.getAuthorities().contains(authority)){
+            if(userDTO.getAuthorities().contains("ROLE_STAFF")){
                 StaffDTO staffDTO = new StaffDTO();
                 staffDTO.setUserId(newUser.getId());
                 staffDTO.setSalary(1000000f);

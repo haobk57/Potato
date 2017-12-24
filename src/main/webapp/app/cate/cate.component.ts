@@ -43,7 +43,9 @@ export class CateComponent implements OnInit {
         this.loadAll();
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
-                this.loadAll();
+                if (event.url.indexOf('/cate/') === 0) {
+                    this.loadAll();
+                }
             }
         });
     }
@@ -89,7 +91,7 @@ export class CateComponent implements OnInit {
             size: 1,
             sort: ''}).subscribe(
                 (res: ResponseWrapper) => { this.customer = res.json[0];
-                window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID='+ this.customer.id);
+                window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID=' + this.customer.id);
             }, null
             );
         return;

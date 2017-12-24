@@ -33,7 +33,7 @@ export const staffRoute: Routes = [
             'pagingParams': StaffResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.staff.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -41,7 +41,7 @@ export const staffRoute: Routes = [
         path: 'staff/:id',
         component: StaffDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.staff.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -53,7 +53,7 @@ export const staffPopupRoute: Routes = [
         path: 'staff-new',
         component: StaffPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.staff.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const staffPopupRoute: Routes = [
         path: 'staff/:id/edit',
         component: StaffPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.staff.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const staffPopupRoute: Routes = [
         path: 'staff/:id/delete',
         component: StaffDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.staff.home.title'
         },
         canActivate: [UserRouteAccessService],

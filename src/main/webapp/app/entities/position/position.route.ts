@@ -33,7 +33,7 @@ export const positionRoute: Routes = [
             'pagingParams': PositionResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.position.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -41,7 +41,7 @@ export const positionRoute: Routes = [
         path: 'position/:id',
         component: PositionDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.position.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -53,7 +53,7 @@ export const positionPopupRoute: Routes = [
         path: 'position-new',
         component: PositionPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.position.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const positionPopupRoute: Routes = [
         path: 'position/:id/edit',
         component: PositionPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.position.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const positionPopupRoute: Routes = [
         path: 'position/:id/delete',
         component: PositionDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.position.home.title'
         },
         canActivate: [UserRouteAccessService],

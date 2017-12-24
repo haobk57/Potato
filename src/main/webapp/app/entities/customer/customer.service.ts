@@ -55,8 +55,8 @@ export class CustomerService {
     }
 
     addCoin(req?: any): Observable<ResponseWrapper> {
-        console.log('request',req);
-        return this.http.post(this.resourceAddCoinUrl+'?customerID='+req.customerID + '&loginID=' + req.loginID + '&coin=' + req.coin, null);
+        console.log('request', req);
+        return this.http.post(this.resourceAddCoinUrl + '?customerID=' + req.customerID + '&loginID=' + req.loginID + '&coin=' + req.coin, null);
     }
 
     private convertResponse(res: Response): ResponseWrapper {

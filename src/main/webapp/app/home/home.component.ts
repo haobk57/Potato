@@ -47,9 +47,8 @@ export class HomeComponent implements OnInit {
         this.loadNewProduct();
         this.loadProvider();
         this.loadProduct();
-        
     }
-    
+
     loadProvider() {
         this.providerService.query({
             page: 0,
@@ -109,7 +108,7 @@ export class HomeComponent implements OnInit {
             size: 1,
             sort: ''}).subscribe(
                 (res: ResponseWrapper) => { this.customer = res.json[0];
-                window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID='+ this.customer.id);
+                window.open('http://localhost:8080/#/fake-product?productID=' + this.id + '&key=potato&customerID=' + this.customer.id);
             }, null
             );
         return;

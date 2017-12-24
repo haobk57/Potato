@@ -34,7 +34,7 @@ export const customerRoute: Routes = [
             'pagingParams': CustomerResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customer.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -42,7 +42,7 @@ export const customerRoute: Routes = [
         path: 'customer/:id',
         component: CustomerDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customer.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -54,7 +54,7 @@ export const customerPopupRoute: Routes = [
         path: 'customer-new',
         component: CustomerPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customer.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -64,7 +64,7 @@ export const customerPopupRoute: Routes = [
         path: 'customer/:id/edit',
         component: CustomerPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customer.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -74,7 +74,7 @@ export const customerPopupRoute: Routes = [
         path: 'customer/:id/add-coin',
         component: CustomerAddCoinPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customer.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -84,7 +84,7 @@ export const customerPopupRoute: Routes = [
         path: 'customer/:id/delete',
         component: CustomerDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.customer.home.title'
         },
         canActivate: [UserRouteAccessService],

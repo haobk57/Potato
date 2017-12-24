@@ -33,7 +33,7 @@ export const providerRoute: Routes = [
             'pagingParams': ProviderResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.provider.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -41,7 +41,7 @@ export const providerRoute: Routes = [
         path: 'provider/:id',
         component: ProviderDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.provider.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -53,7 +53,7 @@ export const providerPopupRoute: Routes = [
         path: 'provider-new',
         component: ProviderPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.provider.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const providerPopupRoute: Routes = [
         path: 'provider/:id/edit',
         component: ProviderPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.provider.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const providerPopupRoute: Routes = [
         path: 'provider/:id/delete',
         component: ProviderDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'putatuApp.provider.home.title'
         },
         canActivate: [UserRouteAccessService],

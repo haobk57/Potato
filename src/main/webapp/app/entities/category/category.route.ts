@@ -53,7 +53,7 @@ export const categoryPopupRoute: Routes = [
         path: 'category-new',
         component: CategoryPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.category.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const categoryPopupRoute: Routes = [
         path: 'category/:id/edit',
         component: CategoryPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.category.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const categoryPopupRoute: Routes = [
         path: 'category/:id/delete',
         component: CategoryDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_STAFF', 'ROLE_ADMIN'],
             pageTitle: 'putatuApp.category.home.title'
         },
         canActivate: [UserRouteAccessService],
